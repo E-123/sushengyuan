@@ -13,7 +13,7 @@ import _ from 'lodash';
 
 const FormItem = Form.Item;
 
-class Login extends Component {
+class Register extends Component {
     constructor(props) {
         super(props);
     }
@@ -29,8 +29,8 @@ class Login extends Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-                this.props.login(values);
             }
+            console.log(values)
         });
     };
 
@@ -46,20 +46,34 @@ class Login extends Component {
                             <Input size="large" maxLength="11" placeholder="请输入手机号码" />
                         )}
                     </FormItem>
+                    <div className="ver-code">
+                        <FormItem>
+                            {getFieldDecorator('ver-code', {
+                                rules: [{ required: true, message: '请输入验证码' }],
+                            })(
+                                <Input size="large" maxLength="4" placeholder="请输入验证码" />
+                            )}
+                        </FormItem>
+                        <FormItem>
+                            <Button type="primary">
+                                获取验证码
+                            </Button>
+                        </FormItem>
+                    </div>
                     <FormItem>
                         {getFieldDecorator('password', {
-                            rules: [{ required: true, message: '请输入密码' }],
+                            rules: [{ required: true, message: '请输入6-20位密码' }],
                         })(
-                            <Input size="large" type="password" placeholder="请输入密码" />
+                            <Input size="large" type="password" placeholder="请输入6-20位密码" />
                         )}
                     </FormItem>
                     <FormItem>
                         <Button size="large" type="primary" htmlType="submit" className="login-form-button">
-                            登录
+                            确认并登录
                         </Button>
                         <center>
                             <p>未注册、未设置或忘记密码？</p>
-                            <Link to="register" className="register-link">前去设置帐号 &gt;</Link>
+                            <Link to="login" className="register-link">返回 &gt;</Link>
                         </center>
                     </FormItem>
                 </div>
@@ -68,4 +82,4 @@ class Login extends Component {
     }
 }
 
-export default Login = Form.create()(Login);
+export default Register = Form.create()(Register);

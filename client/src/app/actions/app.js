@@ -4,19 +4,20 @@
  * @date 2016-10-24
  */
 
-export function example(params) {
+export function login(object) {
     return ({dispatch, fetch}) =>
-        fetch('example', {params: params})
+        fetch('login', {params: object})
             .then(json => {
-                dispatch(setExample(json.body));
+                console.log(json.body)
+                dispatch(setLoginSuccess(json.body));
             }).catch(error => {
                 console.log(error);
             });
 }
 
-function setExample(data) {
+function setLoginSuccess(data) {
     return {
-        type: 'setExample',
+        type: 'setLoginSuccess',
         payload: data
     };
 }

@@ -6,3 +6,5 @@
 
 export Layout from './Layout';
 export Login from './routes/Login';
+export Home from './routes/Home';
+export Register from './routes/Register';

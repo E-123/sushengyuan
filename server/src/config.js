@@ -9,9 +9,9 @@ module.exports = {
     SERVERCONFIG: {
         apiDir: 'api',
         // 后端接口host
-        apiBackEndHost: '',
+        apiBackEndHost: 'http://m.easylifewell.com:6060',
         // 是否mock，true时请求${path}-mock.js
-        isMock: 1,
+        isMock: 0,
         // app port
         port: process.env.PORT || 3001,
         // 开发／生产环境

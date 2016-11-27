@@ -13,6 +13,7 @@ const BASE_ERROR_STATUS = 400;
 
 export default function () {
     return function (path, options) {
+        console.log(path, options)
         let ext = {};
         // 不传options时，默认params为空
         !options && (options = {params: {}});
@@ -34,7 +35,6 @@ export default function () {
                 body: body.join('&')
             };
         }
-
         return fetch.call(this, BASE_URL + '?path=' + path, Object.assign({}, options, ext))
             .then(res => {
                 return Promise.resolve(res.json());

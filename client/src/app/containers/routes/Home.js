@@ -5,7 +5,7 @@
  */
 
 import {connect} from 'react-redux';
-import {Login} from '../../components';
+import {Home} from '../../components';
 import * as actionCreators from '../../actions/app';
 
 const mapStateToProps = state => {
@@ -15,10 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-    	login(object) {
-    		dispatch(actionCreators.login(object));
-    	}
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

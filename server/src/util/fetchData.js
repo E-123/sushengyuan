@@ -11,7 +11,6 @@ module.exports = {
     fetchData(req, res, apiPath, params) {
         let ext = {};
         params = params || {};
-        params.userName = req.session.views.userName;
         if (_.isPlainObject(params)) {
             ext = {
                 method: 'POST',

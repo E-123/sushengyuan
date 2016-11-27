@@ -17,16 +17,9 @@ message.config({
 export default class Layout extends Component {
     render() {
         let {children} = this.props;
-        message.success('hello world');
         return (
             <div className="wrapper">
-            	<div className="header">
-            		header
-            	</div>
                 <div className="main">{children}</div>
-                <div className="header">
-            		footer
-            	</div>
             </div>
         );
     }

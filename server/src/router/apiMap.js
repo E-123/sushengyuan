@@ -15,7 +15,6 @@ import {SERVERCONFIG} from '../config';
 const {nodeEnv, isMock, apiDir} = SERVERCONFIG;
 const serverPath = '../' + apiDir.replace(/[\\\/]?$/, '/');
 let router = express.Router();
-
 function getLocalApi(req, res, apiPath, params) {
     // 获取文件路径
     let file = path.resolve(__dirname, serverPath + apiPath + (isMock ? '-mock.js' : '.js'));
