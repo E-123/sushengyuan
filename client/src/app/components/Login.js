@@ -28,7 +28,6 @@ class Login extends Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
                 this.props.login(values);
             }
         });
@@ -48,7 +47,7 @@ class Login extends Component {
                     </FormItem>
                     <FormItem>
                         {getFieldDecorator('password', {
-                            rules: [{ required: true, message: '请输入密码' }],
+                            rules: [{ required: true, min: 6, max: 20, message: '请输入密码' }],
                         })(
                             <Input size="large" type="password" placeholder="请输入密码" />
                         )}

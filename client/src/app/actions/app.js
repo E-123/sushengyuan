@@ -4,12 +4,23 @@
  * @date 2016-10-24
  */
 
+import {message} from 'antd';
+import {Link, browserHistory} from 'react-router';
+
 export function login(object) {
     return ({dispatch, fetch}) =>
         fetch('login', {params: object})
             .then(json => {
-                console.log(json.body)
-                dispatch(setLoginSuccess(json.body));
+                if (json.code === 400) {
+                    message.error(json.message);
+                    browserHistory.push('/register');
+                }
+                else if (json.code !== 200) {
+                    message.error(json.message);
+                }
+                else {
+                    dispatch(setLoginSuccess(json));
+                }
             }).catch(error => {
                 console.log(error);
             });
