@@ -1,12 +1,12 @@
 /**
- * @file demo login container
+ * @file demo 整体页面布局container
  * @author hancong
  * @date 2016-10-25
  */
 
 import {connect} from 'react-redux';
-import {Home} from '../../components';
-import * as actionCreators from '../../actions/app';
+import LayoutWithBar from '../components/LayoutWithBar';
+import * as actionCreators from '../actions/app';
 
 const mapStateToProps = state => {
     return {
@@ -22,4 +22,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(LayoutWithBar);

@@ -13,7 +13,6 @@ const BASE_ERROR_STATUS = 400;
 
 export default function () {
     return function (path, options) {
-        console.log(path, options)
         let ext = {};
         // 不传options时，默认params为空
         !options && (options = {params: {}});

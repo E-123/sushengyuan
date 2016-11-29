@@ -11,12 +11,15 @@ module.exports = {
     fetchData(req, res, apiPath, params) {
         let ext = {};
         params = params || {};
+        console.log(req.get('Cookie'))
         if (_.isPlainObject(params)) {
+            console.log('###', req.headers.cookie)
             ext = {
-                method: 'POST',
-                credentials: 'same-origin',
+                method: 'GET',
+                credentials: 'include',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Cookie': req.headers.cookie
                 },
                 body: JSON.stringify(params)
             };
@@ -29,8 +32,16 @@ module.exports = {
         return fetch(SERVERCONFIG.apiBackEndHost + apiPath, Object.assign({}, ext))
             .then(response => {
                 console.log('=================response success================');
-                console.log(response);
-                return response.json();
+                // console.log(response);
+                console.log('=================response headers================');
+                // console.log(response.headers.getAll('set-cookie'));
+                let cookies = response.headers.getAll('set-cookie');
+                if (!cookies.length) {
+                    return response.json();
+                }
+                // response.cookie(response.headers.getAll('set-cookie'))
+                // req.setHeaders('set-cookie', response.headers.getAll('set-cookie'))
+                return response;
             })
             .catch(error => {
                 console.log('=================response error================');

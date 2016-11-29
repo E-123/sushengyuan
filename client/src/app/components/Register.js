@@ -29,9 +29,16 @@ class Register extends Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                this.props.confirmRegister(values);
             }
-            console.log(values)
         });
+    };
+
+    getVercode = (e) => {
+        let error = this.props.form.getFieldError('phone');
+        if (!error) {
+            this.props.getVercode(this.props.form.getFieldValue('phone'));
+        }
     };
 
     render() {
@@ -41,28 +48,28 @@ class Register extends Component {
                 <div className="form-wrapper">
                     <FormItem>
                         {getFieldDecorator('phone', {
-                            rules: [{ required: true, message: '请输入手机号码' }],
+                            rules: [{ required: true, max: 11, min: 11, message: '请输入正确的手机号码' }],
                         })(
-                            <Input size="large" maxLength="11" placeholder="请输入手机号码" />
+                            <Input type="tel" size="large" maxLength="11" placeholder="请输入手机号码" />
                         )}
                     </FormItem>
                     <div className="ver-code">
                         <FormItem>
-                            {getFieldDecorator('ver-code', {
+                            {getFieldDecorator('smscode', {
                                 rules: [{ required: true, message: '请输入验证码' }],
                             })(
                                 <Input size="large" maxLength="4" placeholder="请输入验证码" />
                             )}
                         </FormItem>
                         <FormItem>
-                            <Button type="primary">
+                            <Button type="primary" onClick={this.getVercode}>
                                 获取验证码
                             </Button>
                         </FormItem>
                     </div>
                     <FormItem>
                         {getFieldDecorator('password', {
-                            rules: [{ required: true, message: '请输入6-20位密码' }],
+                            rules: [{ required: true, min: 6, max: 20, message: '请输入6-20位密码' }],
                         })(
                             <Input size="large" type="password" placeholder="请输入6-20位密码" />
                         )}

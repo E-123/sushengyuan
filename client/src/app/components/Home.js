@@ -21,7 +21,12 @@ export default class Home extends Component {
     state = {
     };
 
-    componentWillMount = () => {
+    protector = (e) => {
+        e.preventDefault();
+        let userInfo = this.props.userInfo;
+        if (userInfo.sid) {
+            browserHistory.push('/protector');
+        }
     };
 
     render() {
@@ -32,7 +37,7 @@ export default class Home extends Component {
                 </div>
                 <div className="content">
                     <Link to="">均衡膳食</Link>
-                    <Link to="login">净化卫士</Link>
+                    <Link to="" onClick={this.protector}>净化卫士</Link>
                 </div>
             </div>
         );

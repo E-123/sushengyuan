@@ -11,6 +11,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import fallback from 'express-history-api-fallback';
 import session from 'express-session';
+// import cookieParser from 'cookie-parser';
 
 import apiMap from './router/apiMap';
 
@@ -37,6 +38,7 @@ app.use(fallback('index.html', {root}));
 // map request path to api file
 app.use(bodyParser.urlencoded({limit: `${postLimit}MB`, extended: true}));
 app.use(bodyParser.json({limit: `${postLimit}MB`}));
+// app.use(cookieParser());
 app.use(apiMap);
 
 // server start

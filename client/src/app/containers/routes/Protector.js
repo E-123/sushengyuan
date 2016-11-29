@@ -5,23 +5,21 @@
  */
 
 import {connect} from 'react-redux';
-import {Register} from '../../components';
+import {Protector} from '../../components';
 import * as actionCreators from '../../actions/app';
 
 const mapStateToProps = state => {
     return {
+    	userInfo: state.app.userInfo
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-    	getVercode(phone) {
-    		dispatch(actionCreators.getVercode(phone));
-    	},
-    	confirmRegister(object) {
-    		dispatch(actionCreators.confirmRegister(object));
+    	getUser() {
+    		dispatch(actionCreators.getUser())
     	}
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Protector);

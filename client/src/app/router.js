@@ -6,7 +6,7 @@
 
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
-import {Layout, Home, Login, Register} from './containers';
+import {Layout, Home, Login, Register, Protector, LayoutWithBar} from './containers';
 
 export default ({history}) => (
     <Router history={history}>
@@ -15,6 +15,9 @@ export default ({history}) => (
 	        <Route path="index" component={Home} />
 	        <Route path="login" component={Login} />
 	        <Route path="register" component={Register} />
+        </Route>
+        <Route path="/" component={LayoutWithBar}>
+        	<Route path="protector" component={Protector} />
         </Route>
     </Router>
 );

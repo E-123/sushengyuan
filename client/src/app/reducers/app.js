@@ -5,14 +5,14 @@
  */
 
 const initialState = {
-    example: ''
+    userInfo: {}
 };
 
 export default function update(state = initialState, action) {
     switch (action.type) {
-        case 'setExample':
+        case 'setUserInfo':
             return Object.assign({}, state, {
-                example: action.payload
+                userInfo: action.payload
             });
         default:
             return state;
