@@ -1,4 +1,4 @@
-# react-redux-ant-ui-express-demo
+# sushengyuan
 
 ## 安装运行：
 
@@ -6,17 +6,22 @@ node 5.4
 
 npm 4.0
 
-* 安装依赖
+#### 安装依赖
 
+```
     npm install
+```
 
-* 启动express server
+#### 启动express server
 
+```
     npm start
+```
+#### 新建console tab，编译client/src（编译后文件在client/build下）
 
-* 新建console tab，编译client/src（编译后文件在client/build下）
-
+```
     npm run build
+```
 
 访问：http://localhost:3001/
 

@@ -1,10 +1,10 @@
 {
-  "name": "demo",
+  "name": "sushengyuan",
   "version": "0.0.1",
-  "description": "react-redux-ant-ui-express-demo",
+  "description": "sushengyuan",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/easylifewell/sushengyuan"
   },
   "scripts": {
     "start": "nodemon server/src/app.js --ignore client/ --exec babel-node",
