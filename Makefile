@@ -12,7 +12,7 @@ start:
 	cp -r /tmp/sushengyuan/node_modules   ./
 	npm start
 shell: image
-	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make bash
+	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT) -p 3001:3001  $(IMAGE) make bash
 bash:
-	cp -r /tmp/sushengyuan/node_modules   ./
+	cp -r /tmp/sushengyuan/node_modules   ./    && /bin/bash
 
