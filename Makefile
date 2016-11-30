@@ -9,10 +9,10 @@ image:
 run: image
 	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make start
 start:
-	cp -r /tmp/node_modules   ./
+	cp -r /tmp/sushengyuan/node_modules   ./
 	npm start
 shell: image
 	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make bash
 bash:
-	cp -r /tmp/node_modules   ./
+	cp -r /tmp/sushengyuan/node_modules   ./
 
