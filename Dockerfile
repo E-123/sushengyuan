@@ -15,6 +15,6 @@ RUN mkdir -p /node/src/github.com/easylifewell/sushengyuan \
 WORKDIR	/node/src/github.com/easylifewell/sushengyuan
 
 COPY  script/entry  /
-ENTERPOINT ["/entry" ]
+ENTRYPOINT ["/entry" ]
 
 ADD . /node/src/github.com/easylifewell/sushengyuan
