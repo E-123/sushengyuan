@@ -6,12 +6,12 @@ IMAGE := sushengyuan_dev$(if $(GIT_BRANCH_CLEAN),:$(GIT_BRANCH_CLEAN))
 PROJECT := github.com/easylifewell/sushengyuan
 image:
 	docker build -t $(IMAGE) .
-run:
+run: image
 	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make start
 start:
 	cp -r /tmp/node_modules   ./
 	npm start
-shell:
+shell: image
 	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make bash
 bash:
 	cp -r /tmp/node_modules   ./
