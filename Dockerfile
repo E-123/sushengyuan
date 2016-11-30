@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y \
 	git	\
 	--no-install-recommends
 
-RUN mkdir -p /node/src/github.com/easylifewell/sushengyuan \
-	&& cd /node/src/github.com/easylifewell/sushengyuan \
+RUN mkdir -p /tmp \
+	&& cd /tmp \
 	&& git clone https://github.com/easylifewell/sushengyuan \
 	&& cd sushengyuan \
 	&& npm install
