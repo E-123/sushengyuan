@@ -15,6 +15,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+    	getUser() {
+    		dispatch(actionCreators.getUser())
+    	}
     }
 };
 

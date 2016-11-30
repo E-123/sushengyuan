@@ -15,6 +15,9 @@ message.config({
 });
 
 export default class Layout extends Component {
+	componentWillMount = () => {
+        this.props.getUser();
+    };
     render() {
         let {children} = this.props;
         return (
