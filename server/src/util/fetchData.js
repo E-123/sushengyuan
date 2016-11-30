@@ -13,7 +13,6 @@ module.exports = {
         params = params || {};
         console.log(req.get('Cookie'))
         if (_.isPlainObject(params)) {
-            console.log('###', req.headers.cookie)
             ext = {
                 method: 'GET',
                 credentials: 'include',
