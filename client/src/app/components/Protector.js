@@ -6,10 +6,6 @@
 
 import React from 'react';
 import {Component} from 'react';
-import {Link, browserHistory} from 'react-router';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import moment from 'moment';
-import _ from 'lodash';
 
 const FormItem = Form.Item;
 

@@ -7,12 +7,8 @@
 import React from 'react';
 import {Component} from 'react';
 import {Link, browserHistory} from 'react-router';
-import { Form, Icon, Input, Button, Checkbox, Carousel } from 'antd';
-import moment from 'moment';
+import { Icon, Carousel } from 'antd';
 import {homeCarouselMaterial} from './config';
-import _ from 'lodash';
-
-const FormItem = Form.Item;
 
 export default class Home extends Component {
     constructor(props) {

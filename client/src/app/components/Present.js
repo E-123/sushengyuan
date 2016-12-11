@@ -8,7 +8,6 @@ import React from 'react';
 import {Component} from 'react';
 import {Link, browserHistory} from 'react-router';
 import { Icon, Card, Button, Carousel } from 'antd';
-import moment from 'moment';
 import _ from 'lodash';
 import {presentMaterial, detailTab} from './config';
 

@@ -6,7 +6,6 @@
 
 import React from 'react';
 import {Component} from 'react';
-import {Link, browserHistory} from 'react-router';
 import {Icon, message} from 'antd';
 import './style.less';
 
