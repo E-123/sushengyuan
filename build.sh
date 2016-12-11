@@ -1,7 +1,7 @@
 
-npm install
+tar -zxf node_modules.tar.gz
 
-echo "====== node_modules installed ======"
+echo "====== node_modules unpacked ======"
 
 node ./node_modules/webpack/bin/webpack --config ./client/webpack-production.config.js
 
