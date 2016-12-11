@@ -13,7 +13,7 @@ const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const config = {
     entry: [path.join(__dirname, '/src/app/app.js')],
     // Render source-map file for final build
-    devtool: 'source-map',
+    devtool: 'eval',
     // output config
     output: {
         path: buildPath, // Path of output file
@@ -21,11 +21,11 @@ const config = {
     },
     plugins: [
         // Define production build to allow React to strip out unnecessary checks
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
+        // new webpack.DefinePlugin({
+        //     'process.env': {
+        //         'NODE_ENV': JSON.stringify('production')
+        //     }
+        // }),
         // Minify the bundle
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -58,11 +58,12 @@ const config = {
                 loader: 'style!css!less'
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /.*\.(gif|png|jpe?g|svg)$/i,
                 loaders: [
-                  'file?hash=sha512&digest=hex&name=[hash].[ext]',
-                  'image-webpack'
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
                 ]
+
             }
         ]
     }
