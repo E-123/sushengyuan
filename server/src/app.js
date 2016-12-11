@@ -12,20 +12,12 @@ import bodyParser from 'body-parser';
 import fallback from 'express-history-api-fallback';
 import session from 'express-session';
 // import cookieParser from 'cookie-parser';
-
 import apiMap from './router/apiMap';
 
 import {SERVERCONFIG} from './config';
 const {port, nodeEnv, postLimit} = SERVERCONFIG;
-
+console.log(nodeEnv)
 let app = express();
-
-// use session
-app.use(session({
-    secret: 'demo',
-    resave: false,
-    saveUninitialized: false
-}));
 
 // static files
 let root = path.resolve(__dirname, '../../client/build/');
