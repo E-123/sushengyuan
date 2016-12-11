@@ -1,4 +1,5 @@
 @themeColor: #2eaa65;
+@themeColorLight: #62be8c;
 html, body {
     background: #fff;
     color: #333;
@@ -12,6 +13,15 @@ html, body {
 .line (@height: 40px) {
     height: @height;
     line-height: @height;
+}
+.ant-carousel {
+    .slick-slider {
+        height: 120px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
 }
 .wrapper {
     min-height: 100%;
@@ -69,6 +79,29 @@ html, body {
                     }
                 }
             }
+            .present-detail {
+                .present-title {
+                    .line(40px);
+                    padding: 0 20px;
+                }
+                .detail-tab {
+                    .line(40px);
+                    display: flex;
+                    align-items: center;
+                    span {
+                        flex: 1;
+                        background: @themeColorLight;
+                        color: #666;
+                        text-align: center;
+                        &.current {
+                            color: #fff;
+                        }
+                    }
+                    &-content {
+                        padding: 10px;
+                    }
+                }
+            }
         }
     }
     .home {
@@ -77,12 +110,6 @@ html, body {
             font-size: 40px;
             text-align: center;
             overflow: hidden;
-            .ant-carousel {
-                .slick-slider {
-                    height: 120px;
-                    overflow: hidden;
-                }
-            }
         }
         .user-bar {
             background: @themeColor;
