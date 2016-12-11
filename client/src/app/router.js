@@ -6,7 +6,7 @@
 
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
-import {Layout, Home, Login, Register, Protector, LayoutWithBar} from './containers';
+import {Layout, Home, Login, Register, Protector, LayoutWithBar, Present} from './containers';
 
 export default ({history}) => (
     <Router history={history}>
@@ -18,6 +18,7 @@ export default ({history}) => (
         </Route>
         <Route path="/" component={LayoutWithBar}>
         	<Route path="protector" component={Protector} />
+            <Route path="present" component={Present} />
         </Route>
     </Router>
 );

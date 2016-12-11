@@ -18,13 +18,17 @@ export default class LayoutWithBar extends Component {
 	componentWillMount = () => {
         this.props.getUser();
     };
+    backward() {
+        history.back();
+    };
     render() {
         let {children, userInfo} = this.props;
-        console.log(userInfo)
         return (
             <div className="wrapper management">
             	<div className="header">
-                    {userInfo.nickname}
+                    <span onClick={this.backward}>
+                        <Icon type="left" /> 返回
+                    </span>
             	</div>
                 <div className="content">{children}</div>
                 <div className="footer">

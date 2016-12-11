@@ -20,6 +20,7 @@ export function login(object) {
                     message.error(json.message);
                 }
                 else {
+                    getUser();
                     message.success(json.message);
                     dispatch(setLoginSuccess(json));
                     browserHistory.push('/index');
@@ -75,8 +76,8 @@ export function getUser() {
         fetch('user')
             .then(json => {
                 if (json.code === 400) {
-                    message.error(json.message);
-                    browserHistory.push('/login');
+                    // message.error(json.message);
+                    // browserHistory.push('/login');
                 }
                 else if (json.sid) {
                     dispatch(setUserInfo(json))

@@ -38,6 +38,7 @@ class Login extends Component {
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <div className="form-wrapper">
+                    <h1>请您登录</h1>
                     <FormItem>
                         {getFieldDecorator('phone', {
                             rules: [{ required: true, message: '请输入手机号码' }],
