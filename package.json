@@ -48,10 +48,12 @@
   },
   "dependencies": {
     "antd": "^2.1.0",
+    "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-alpha.2",
     "es6-promise": "^4.0.5",
     "express-session": "^1.14.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.16.6",
     "object-assign": "^1.0.0",

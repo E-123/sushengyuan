@@ -1,11 +1,5 @@
-/**
- * @file express server
- * @author hancong
- * @date 2016-10-29
- */
-
 'use strict';
-
+import compression from 'compression';
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
@@ -16,6 +10,10 @@ import {SERVERCONFIG} from './config';
 const {port, nodeEnv, postLimit} = SERVERCONFIG;
 let app = express();
 
+app.use(compression({filter: shouldCompress}));
+function shouldCompress (req, res) {
+    return true;
+}
 // static files
 let root = path.resolve(__dirname, '../../client/build/');
 app.use(express.static(root));

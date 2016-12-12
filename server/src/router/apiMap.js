@@ -1,9 +1,3 @@
-/**
- * @file 根据请求path解析到对应的js文件
- * @author hancong
- * @date 2016-10-29
- */
-
 import _ from 'lodash';
 import fs from 'fs';
 import express from 'express';

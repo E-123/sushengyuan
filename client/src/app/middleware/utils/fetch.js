@@ -1,8 +1,3 @@
-/**
- * @file AJAX 扩展options.data支持post json；统一错误信息处理
- * @author hancong
- * @date 2016-5-30
- */
 import fetch from 'isomorphic-fetch';
 import _ from 'lodash';
 import {message} from 'antd';

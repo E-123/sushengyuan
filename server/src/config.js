@@ -1,9 +1,3 @@
-/**
- * @file app配置
- * @author hancong
- * @date 16/10/27.
- */
-
 module.exports = {
     // app server启动配置
     SERVERCONFIG: {

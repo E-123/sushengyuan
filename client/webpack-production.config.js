@@ -1,19 +1,18 @@
-/**
- * @file 营销平台 webpack prod config
- * @author hancong05@baidu.com
- * @date 2016-10-25
- */
-
 const webpack = require('webpack');
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, '../node_modules');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
     entry: [path.join(__dirname, '/src/app/app.js')],
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
+    },
     // Render source-map file for final build
-    devtool: 'eval',
+    devtool: 'source-map',
     // output config
     output: {
         path: buildPath, // Path of output file
@@ -21,17 +20,22 @@ const config = {
     },
     plugins: [
         // Define production build to allow React to strip out unnecessary checks
-        // new webpack.DefinePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new ExtractTextPlugin('bundle.css'),
         // Minify the bundle
         new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false,  // remove all comments
+            },
             compress: {
                 // suppresses warnings, usually from module minification
                 warnings: false
             }
+
         }),
         // Allows error warnings but does not stop compiling.
         new webpack.NoErrorsPlugin(),
@@ -50,12 +54,12 @@ const config = {
                 exclude: [nodeModulesPath]
             },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader?modules!postcss-loader'
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             },
             {
-                test: /\.less$/,
-                loader: 'style!css!less'
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?modules!postcss-loader'
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,

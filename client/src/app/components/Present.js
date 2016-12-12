@@ -1,9 +1,3 @@
-/**
- * @file demo login
- * @author hancong
- * @date 2016-11-02
- */
-
 import React from 'react';
 import {Component} from 'react';
 import {Link, browserHistory} from 'react-router';

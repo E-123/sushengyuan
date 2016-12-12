@@ -1,9 +1,3 @@
-/**
- * @file 营销平台 webpack dev config
- * @author hancong05@baidu.com
- * @date 2016-10-25
- */
-
 const webpack = require('webpack');
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'build');

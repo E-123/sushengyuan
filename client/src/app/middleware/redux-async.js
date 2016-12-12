@@ -1,9 +1,3 @@
-/**
- * @file redux中间件 支持异步
- * @author hancong
- * @date 2016-5-24
- */
-
 import _ from 'lodash';
 import fetch from './utils/fetch';
 

@@ -1,9 +1,3 @@
-/**
- * @file demo app reducer
- * @author hancong
- * @date 2016-10-25
- */
-
 const initialState = {
     userInfo: {}
 };

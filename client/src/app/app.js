@@ -1,9 +1,3 @@
-/**
- * @file demo app入口
- * @author hancong
- * @date 2016-10-25
- */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux';

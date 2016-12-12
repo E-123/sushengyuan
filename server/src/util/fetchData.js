@@ -1,8 +1,3 @@
-/**
- * @file fetchData方法，统一设置host等信息
- * @author hancong
- * @date 2016-11-16
- */
 import fetch from 'isomorphic-fetch';
 import {SERVERCONFIG} from '../config';
 import _ from 'lodash';

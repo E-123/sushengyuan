@@ -1,9 +1,3 @@
-/**
- * @file demo 路由配置
- * @author hancong
- * @date 2016-10-25
- */
-
 import React from 'react';
 import {Router, Route, IndexRoute} from 'react-router';
 import {Layout, Home, Login, Register, Protector, LayoutWithBar, Present} from './containers';

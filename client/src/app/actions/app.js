@@ -1,9 +1,3 @@
-/**
- * @file app action
- * @author hancong
- * @date 2016-10-24
- */
-
 import {message} from 'antd';
 import {Link, browserHistory} from 'react-router';
 
