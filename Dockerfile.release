@@ -1,0 +1,20 @@
+FROM node:6.9
+
+# create app directory
+RUN mkdir -p /usr/src/app
+
+# install app dependencies
+COPY . /usr/src/app
+WORKDIR	/usr/src/app
+RUN npm install
+
+# build the app
+RUN node ./node_modules/webpack/bin/webpack --config ./client/webpack-production.config.js
+RUN node ./node_modules/babel-cli/bin/babel server/src -d server/build
+
+EXPOSE 80
+ENV NODE_ENV=prod
+CMD ["node", "server/build/app.js"]
+
+# docker build -t sushengyuan -f Dockerfile.release  .
+# docker run -d  --restart=always -p 80:80 sushengyuan 
