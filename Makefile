@@ -5,7 +5,7 @@ GIT_BRANCH_CLEAN := $(shell echo $(GIT_BRANCH) | sed -e "s/[^[:alnum:]]/-/g")
 IMAGE := sushengyuan_dev$(if $(GIT_BRANCH_CLEAN),:$(GIT_BRANCH_CLEAN))
 PROJECT := github.com/easylifewell/sushengyuan
 image:
-	docker build -t $(IMAGE) .
+	docker build  --no-cache -t $(IMAGE) .
 run: image
 	docker run -ti --rm -v $(CURDIR):/node/src/$(PROJECT)  $(IMAGE) make start
 start:
