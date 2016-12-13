@@ -18,13 +18,7 @@ export default class Home extends Component {
 
     goToPage = (pageName, e) => {
         e.preventDefault();
-        let userInfo = this.props.userInfo;
-        if (!userInfo.sid) {
-            browserHistory.push('/login');
-        }
-        else {
-            browserHistory.push(`/${pageName}`);
-        }
+        browserHistory.push(`/${pageName}`);
     };
 
     renderCarousel = () => {
