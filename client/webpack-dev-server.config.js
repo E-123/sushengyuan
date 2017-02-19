@@ -4,6 +4,12 @@ const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, '../node_modules');
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
 
+const routeComponentRegex = /src[\/\\]app[\/\\]containers[\/\\]routes[\/\\]([^\/\\]+).js$/;
+const paths = [ // Only to test which files match the regex, juste in case
+  'src/app/containers/routes/Home.js'
+];
+
+console.log(routeComponentRegex.test(paths[0])); // prints 'true'
 const config = {
     // Entry points to the project
     entry: [path.join(__dirname, '/src/app/app.js')],
@@ -25,11 +31,20 @@ const config = {
     module: {
         loaders: [
             {
-                // React-hot loader and
-                test: /\.js$/, // All .js files
-                loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
-                exclude: [nodeModulesPath]
+                test: /\.js$/,
+                exclude: [routeComponentRegex, nodeModulesPath],
+                loader: 'babel-loader',
             },
+            {
+                test: routeComponentRegex,
+                loaders: ['bundle-loader?lazy', 'babel-loader'],
+            },
+            // {
+            //     // React-hot loader and
+            //     test: /\.js$/, // All .js files
+            //     loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
+            //     exclude: [nodeModulesPath]
+            // },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader?modules!postcss-loader'

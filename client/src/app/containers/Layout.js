@@ -15,4 +15,8 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
+Layout.propTypes = {
+  children: React.PropTypes.func.isRequired,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

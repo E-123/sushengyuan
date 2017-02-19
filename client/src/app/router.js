@@ -1,18 +1,25 @@
 import React from 'react';
-import {Router, Route, IndexRoute} from 'react-router';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {Layout, Home, Login, Register, Protector, LayoutWithBar, Present} from './containers';
 
+function lazyLoadComponent(lazyModule) {
+  return (location, cb) => {
+    lazyModule(module => {
+      cb(null, module.default);
+    });
+  };
+}
+
 export default ({history}) => (
-    <Router history={history}>
+    <Router history={browserHistory}>
         <Route path="/" component={Layout}>
-        	<IndexRoute component={Home} />
-	        <Route path="index" component={Home} />
-	        <Route path="login" component={Login} />
-	        <Route path="register" component={Register} />
+        	<IndexRoute getComponent={lazyLoadComponent(Home)} />
+	        <Route path="login" getComponent={lazyLoadComponent(Login)} />
+	        <Route path="register" getComponent={lazyLoadComponent(Register)} />
         </Route>
         <Route path="/" component={LayoutWithBar}>
-        	<Route path="protector" component={Protector} />
-            <Route path="present" component={Present} />
+        	<Route path="protector" getComponent={lazyLoadComponent(Protector)} />
+            <Route path="present" getComponent={lazyLoadComponent(Present)} />
         </Route>
     </Router>
 );

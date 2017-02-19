@@ -16,4 +16,8 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+LayoutWithBar.propTypes = {
+  children: React.PropTypes.func.isRequired,
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(LayoutWithBar);
