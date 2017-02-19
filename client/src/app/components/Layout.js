@@ -13,7 +13,6 @@ export default class Layout extends Component {
     };
     render() {
         let {children} = this.props;
-        console.log(this.props)
         return (
             <div className="wrapper">
                 <div className="main">{children}</div>

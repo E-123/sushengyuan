@@ -14,6 +14,7 @@ export default ({history}) => (
     <Router history={browserHistory}>
         <Route path="/" component={Layout}>
         	<IndexRoute getComponent={lazyLoadComponent(Home)} />
+            <Route path="index" getComponent={lazyLoadComponent(Home)} />
 	        <Route path="login" getComponent={lazyLoadComponent(Login)} />
 	        <Route path="register" getComponent={lazyLoadComponent(Register)} />
         </Route>
