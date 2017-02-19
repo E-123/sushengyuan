@@ -5,3 +5,8 @@ export Home from './Home';
 export Protector from './Protector';
 export Register from './Register';
 export Present from './Present';
+export BetterFood from './BetterFood';
+export IsComing from './IsComing';
+export Ingredients from './Ingredients';
+export IngredientsCategory from './IngredientsCategory';
+export IngredientsDetail from './IngredientsDetail';

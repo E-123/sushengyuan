@@ -12,7 +12,6 @@ let router = express.Router();
 function getLocalApi(req, res, apiPath, params) {
     // 获取文件路径
     let file = path.resolve(__dirname, serverPath + apiPath + (isMock ? '-mock.js' : '.js'));
-
     // 判断文件是否存在，若文件不存在返回错误
     let isExist = fs.existsSync(file);
     if (!isExist) {

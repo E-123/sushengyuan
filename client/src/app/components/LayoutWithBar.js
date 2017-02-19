@@ -16,7 +16,6 @@ export default class LayoutWithBar extends Component {
     };
     render() {
         let {children, userInfo} = this.props;
-        console.log('withou', this.props)
         return (
             <div className="wrapper management">
             	<div className="header">

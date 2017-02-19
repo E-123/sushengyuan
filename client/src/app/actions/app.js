@@ -86,3 +86,37 @@ function setUserInfo(payload) {
         payload: payload
     };
 }
+
+// 获取食材分类详情
+export function getIngredientsCategoryItems(category) {
+    return ({dispatch, fetch}) =>
+        fetch('ingredients', {params: {category: category}})
+            .then(json => {
+                dispatch(setIngredientsCategoryItems(json))
+            }).catch(error => {
+                console.log(error);
+            });
+}
+function setIngredientsCategoryItems(payload) {
+    return {
+        type: 'setIngredientsCategoryItems',
+        payload: payload
+    }
+}
+
+// 获取食材详情
+export function getIngredientsDetail(name) {
+    return ({dispatch, fetch}) =>
+        fetch('ingredientsDetail', {params: {name: name}})
+            .then(json => {
+                dispatch(setIngredientsDetail(json))
+            }).catch(error => {
+                console.log(error);
+            });
+}
+function setIngredientsDetail(payload) {
+    return {
+        type: 'setIngredientsDetail',
+        payload: payload
+    }
+}

@@ -46,6 +46,91 @@ html, body {
             color: #fff;
             .line(48px);
         }
+        .ingredients {
+            padding: 20px 0;
+            .ant-collapse-content {
+                background: #f4f4f4;
+            }
+            .category-label {
+                display: inline-block;
+                background: #fff;
+                width: 31%;
+                padding: 3px 8px;
+                border: 1px solid #eee;
+                border-radius: 2px;
+                margin: 0px 1.1%;
+                font-size: 12px;
+                color: #333;
+                text-align: center;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+        .ingredients-detail {
+            padding: 20px;
+
+            h3, strong {
+                font-weight: 400;
+            }
+            h3 {
+                color: @themeColor;
+                margin-bottom: 20px;
+            }
+            strong {
+                display: block;
+                border-bottom: 1px solid @themeColor;
+            }
+            .content-wrap {
+                margin-bottom: 20px;
+            }
+            .content {
+                overflow: hidden;
+                p {
+                    margin: 8px 0;
+                }
+            }
+            .value-table {
+                > span {
+                    display: inline-block;
+                    width: 50%;
+                    line-height: 1.7em;
+                }
+            }
+        }
+        .ingredients-category {
+            padding: 20px;
+            background: #f7f7f7;
+            .ant-card {
+                width: 29%;
+                display: inline-block;
+                margin: 1%;
+                a {
+                    color: #888;
+                }
+                .custom-image {
+                    height: 80px;
+                    overflow: hidden;
+                }
+                .custom-card {
+                    font-size: 12px;
+                    word-wrap: normal;
+                }
+            }
+        }
+        .better-food {
+            padding: 20px 0;
+            .circle {
+                background: url(../../www/image/ssjx.png) no-repeat center;
+                background-size: 100% auto;
+                position: relative;
+                a {
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: absolute;
+                }
+            }
+        }
         .present {
             .present-tab-nav {
                 display: flex;

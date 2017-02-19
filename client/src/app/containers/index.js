@@ -5,3 +5,8 @@ export Home from './routes/Home';
 export Protector from './routes/Protector';
 export Register from './routes/Register';
 export Present from './routes/Present';
+export BetterFood from './routes/BetterFood';
+export IsComing from './routes/IsComing';
+export Ingredients from './routes/Ingredients';
+export IngredientsCategory from './IngredientsCategory';
+export IngredientsDetail from './IngredientsDetail';

@@ -66,7 +66,7 @@ export default class Home extends Component {
                             <span className="img"><img src="/image/jiyin.png" /></span>
                             <span className="title">基因检测</span>
                         </Link>
-                        <Link to="">
+                        <Link to="" onClick={this.goToPage.bind(this, 'betterfood')}>
                             <span className="img"><img src="/image/shanshi.png" /></span>
                             <span className="title">精准膳食</span>
                         </Link>

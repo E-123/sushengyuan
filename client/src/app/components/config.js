@@ -13,6 +13,28 @@ module.exports = {
             href: ''
         }
     ],
+    ingredientsCategory: [{
+        title: '肉类',
+        subCategory: ['猪', '牛', '羊', '鸡', '鸭', '其它肉类', '制品']
+    }, {
+        title: '水果、花茶、坚果',
+        subCategory: ['鲜果', '花', '坚果、干果类']
+    }, {
+        title: '蔬菜、菌藻、药食',
+        subCategory: ['蔬菜类', '菌藻类', '药材类', '酸菜、腌菜类']
+    }, {
+        title: '鱼虾蟹贝等水产',
+        subCategory: ['虾', '蟹', '贝', '鱼', '其它']
+    }, {
+        title: '谷类',
+        subCategory: ['米', '面', '杂粮', '淀粉类']
+    }, {
+        title: '豆乳蛋类及制品',
+        subCategory: ['乳及其制品', '豆及其制品', '蛋及其制品']
+    }, {
+        title: '调味品',
+        subCategory: ['香辛料', '酱', '油', '糖']
+    }],
     detailTab: [
         {
             title: '商品详情',
