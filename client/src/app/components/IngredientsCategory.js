@@ -20,8 +20,11 @@ export default class IngredientsCategory extends Component {
         let category = this.props.params.category;
 
         return items.map((item, index) => {
+            if (!item.name || !item.url) {
+                return null;
+            }
             return <Card bodyStyle={{ padding: 0 }} key={index}>
-                <Link to={`/ingredients/detail/${item.name}`}>
+                <Link to={`/ingredients/${category}/${item.name}`}>
                     <div className="custom-image">
                         <img alt="example" width="100%" src={item.url} />
                     </div>
@@ -37,7 +40,10 @@ export default class IngredientsCategory extends Component {
         let category = this.props.params.category;
         return (
             <div className="ingredients-category">
-                {category}
+                <h3 className="crumbs"><Link to="/ingredients">全部分类</Link>
+                    <span className="split-string">&gt;</span>
+                    {category}
+                </h3>
                 <div className="category-detail">
                     {this.renderCategoryDetailItems()}
                 </div>

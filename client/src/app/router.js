@@ -25,7 +25,7 @@ export default ({history}) => (
             <Route path="isComing" getComponent={lazyLoadComponent(IsComing)} />
             <Route path="ingredients" getComponent={lazyLoadComponent(Ingredients)} />
             <Route path="ingredients/:category" component={IngredientsCategory} />
-            <Route path="ingredients/detail/:name" component={IngredientsDetail} />
+            <Route path="ingredients/:category/:name" component={IngredientsDetail} />
         </Route>
     </Router>
 );

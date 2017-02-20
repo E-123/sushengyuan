@@ -46,6 +46,17 @@ html, body {
             color: #fff;
             .line(48px);
         }
+        .crumbs {
+            color: #666 !important;
+            a {
+                color: @themeColorLight;
+                display: inline-block;
+            }
+            .split-string {
+                display: inline-block;
+                margin: 0 5px;
+            }
+        }
         .ingredients {
             padding: 20px 0;
             .ant-collapse-content {
@@ -69,14 +80,15 @@ html, body {
         }
         .ingredients-detail {
             padding: 20px;
+            background: #f4f4f4;
+            .ant-card {
+                margin-bottom: 20px;
+            }
 
             h3, strong {
                 font-weight: 400;
             }
-            h3 {
-                color: @themeColor;
-                margin-bottom: 20px;
-            }
+
             strong {
                 display: block;
                 border-bottom: 1px solid @themeColor;
@@ -101,6 +113,10 @@ html, body {
         .ingredients-category {
             padding: 20px;
             background: #f7f7f7;
+            h3 {
+                margin-bottom: 10px;
+                font-weight: 400;
+            }
             .ant-card {
                 width: 29%;
                 display: inline-block;
@@ -114,6 +130,7 @@ html, body {
                 }
                 .custom-card {
                     font-size: 12px;
+                    padding: 3px 8px;
                     word-wrap: normal;
                 }
             }
