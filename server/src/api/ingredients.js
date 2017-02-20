@@ -3,7 +3,7 @@ import path from 'path';
 module.exports = (req, res, apiPath, params) => {
 
     function getLocalData() {
-        let file = path.resolve(__dirname, '../material/index/' + params.category + '.json');
+        let file = path.resolve(__dirname, '../../material/index/' + params.category + '.json');
         let isExist = fs.existsSync(file);
         let resp, result;
         if (!isExist) {

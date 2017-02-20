@@ -11,7 +11,6 @@ RUN npm install
 # build the app
 RUN node ./node_modules/webpack/bin/webpack --config ./client/webpack-production.config.js
 RUN node ./node_modules/babel-cli/bin/babel server/src -d server/build
-RUN cp -r /usr/src/app/server/src/material /usr/src/app/server/build/material
 
 EXPOSE 80
 ENV NODE_ENV=prod
