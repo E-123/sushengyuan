@@ -17,5 +17,6 @@ EXPOSE 80
 ENV NODE_ENV=prod
 CMD ["node", "server/build/app.js"]
 
-# docker build -t sushengyuan -f Dockerfile.release  .
-# docker run -d  --restart=always -p 80:80 sushengyuan
+# docker build -t easylifewell/sushengyuan -f Dockerfile.release  .
+# docker push easylifewell/sushengyuan
+# docker run -d  --restart=always -p 80:80 easylifewell/sushengyuan
