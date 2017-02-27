@@ -10,3 +10,4 @@ export IsComing from './routes/IsComing';
 export Ingredients from './routes/Ingredients';
 export IngredientsCategory from './IngredientsCategory';
 export IngredientsDetail from './IngredientsDetail';
+export Clock from './routes/Clock';

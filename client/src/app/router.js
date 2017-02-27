@@ -1,6 +1,6 @@
 import React from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-import {Layout, Home, Login, Register, Protector, LayoutWithBar, Present, BetterFood, IsComing, Ingredients, IngredientsCategory, IngredientsDetail} from './containers';
+import {Layout, Home, Login, Register, Protector, LayoutWithBar, Present, BetterFood, IsComing, Ingredients, IngredientsCategory, IngredientsDetail, Clock} from './containers';
 
 function lazyLoadComponent(lazyModule) {
   return (location, cb) => {
@@ -24,6 +24,7 @@ export default ({history}) => (
             <Route path="betterfood" getComponent={lazyLoadComponent(BetterFood)} />
             <Route path="isComing" getComponent={lazyLoadComponent(IsComing)} />
             <Route path="ingredients" getComponent={lazyLoadComponent(Ingredients)} />
+            <Route path="clock" getComponent={lazyLoadComponent(Clock)} />
             <Route path="ingredients/:category" component={IngredientsCategory} />
             <Route path="ingredients/:category/:name" component={IngredientsDetail} />
         </Route>

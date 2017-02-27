@@ -1,4 +1,18 @@
 module.exports = {
+    clock: {
+        '子': {description: '子时具体描述', time: 0},
+        '丑': {description: '丑时具体描述', time: 2},
+        '寅': {description: '寅时具体描述', time: 4},
+        '卯': {description: '卯时具体描述', time: 6},
+        '辰': {description: '辰时具体描述', time: 8},
+        '巳': {description: '巳时具体描述', time: 10},
+        '午': {description: '午时具体描述', time: 12},
+        '未': {description: '未时具体描述', time: 14},
+        '申': {description: '申时具体描述', time: 16},
+        '酉': {description: '酉时具体描述', time: 18},
+        '戌': {description: '戌时具体描述', time: 20},
+        '亥': {description: '亥时具体描述', time: 22}
+    },
     homeCarouselMaterial: [
         {
             imgSrc: '/image/assets/home/1.png',

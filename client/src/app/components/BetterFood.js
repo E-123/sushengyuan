@@ -40,7 +40,7 @@ export default class Present extends Component {
             top: 579 / 918
         }, {
             className: 'zyysz',
-            linkTo: 'isComing',
+            linkTo: 'clock',
             width: 160 / 751,
             left: 499 / 751,
             top: 112 / 918
