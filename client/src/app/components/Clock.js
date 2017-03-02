@@ -6,8 +6,15 @@ import {clock} from './config';
 export default class Clock extends Component {
     constructor(props) {
         super(props);
+        let hour = (new Date()).getHours();
+        let time;
+        for (let i in clock) {
+            if ((clock[i].time + 1 > hour) && (hour > clock[i].time - 1)) {
+                time = i;
+            }
+        }
         this.state = {
-            time: '子'
+            time: time
         }
     }
 
@@ -18,8 +25,8 @@ export default class Clock extends Component {
     }
 
     render() {
-        let {description} = clock[this.state.time];
-        let time = String((new Date()).getHours());
+        let {description, time} = clock[this.state.time];
+        time = String(time);
         return (
             <div className="clock">
             <svg width="90%" viewBox="0 0 757 758" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +239,9 @@ export default class Clock extends Component {
                 </g>
                 </svg>
                 <div className="clock-description">
-                    {clock[this.state.time].description}
+                    <p><strong>{clock[this.state.time].shichen}</strong></p>
+                    <p className="song">{clock[this.state.time].yangshengge}</p>
+                    <p>{clock[this.state.time].description}</p>
                 </div>
             </div>
         );
