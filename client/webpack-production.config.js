@@ -50,13 +50,13 @@ const config = {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: [routeComponentRegex, nodeModulesPath],
+                exclude: [nodeModulesPath],
                 loader: 'babel-loader',
             },
-            {
-                test: routeComponentRegex,
-                loaders: ['bundle-loader?lazy', 'babel-loader'],
-            },
+            // {
+            //     test: routeComponentRegex,
+            //     loaders: ['bundle-loader?lazy', 'babel-loader'],
+            // },
             {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")

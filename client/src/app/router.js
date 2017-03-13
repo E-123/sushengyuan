@@ -13,18 +13,18 @@ function lazyLoadComponent(lazyModule) {
 export default ({history}) => (
     <Router history={browserHistory}>
         <Route path="/" component={Layout}>
-        	<IndexRoute getComponent={lazyLoadComponent(Home)} />
-            <Route path="index" getComponent={lazyLoadComponent(Home)} />
-	        <Route path="login" getComponent={lazyLoadComponent(Login)} />
-	        <Route path="register" getComponent={lazyLoadComponent(Register)} />
+        	<IndexRoute component={Home} />
+            <Route path="index" component={Home} />
+	        <Route path="login" component={Login} />
+	        <Route path="register" component={Register} />
         </Route>
         <Route path="/" component={LayoutWithBar}>
-        	<Route path="protector" getComponent={lazyLoadComponent(Protector)} />
-            <Route path="present" getComponent={lazyLoadComponent(Present)} />
-            <Route path="betterfood" getComponent={lazyLoadComponent(BetterFood)} />
-            <Route path="isComing" getComponent={lazyLoadComponent(IsComing)} />
-            <Route path="ingredients" getComponent={lazyLoadComponent(Ingredients)} />
-            <Route path="clock" getComponent={lazyLoadComponent(Clock)} />
+        	<Route path="protector" component={Protector} />
+            <Route path="present" component={Present} />
+            <Route path="betterfood" component={BetterFood} />
+            <Route path="isComing" component={IsComing} />
+            <Route path="ingredients" component={Ingredients} />
+            <Route path="clock" component={Clock} />
             <Route path="ingredients/:category" component={IngredientsCategory} />
             <Route path="ingredients/:category/:name" component={IngredientsDetail} />
         </Route>

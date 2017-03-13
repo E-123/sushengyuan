@@ -14,7 +14,7 @@ export default class Clock extends Component {
             }
         }
         this.state = {
-            time: time
+            time: time || '子'
         }
     }
 
@@ -27,6 +27,7 @@ export default class Clock extends Component {
     render() {
         let {description, time} = clock[this.state.time];
         time = String(time);
+
         return (
             <div className="clock">
             <svg width="90%" viewBox="0 0 757 758" version="1.1" xmlns="http://www.w3.org/2000/svg"

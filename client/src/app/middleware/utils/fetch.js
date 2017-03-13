@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import _ from 'lodash';
 import {message} from 'antd';
-
+import {Promise} from 'es6-promise-polyfill';
 const BASE_URL = '/request.ajax';
 const OK_STATUS = 200;
 const BASE_ERROR_STATUS = 400;
@@ -29,7 +29,7 @@ export default function () {
                 body: body.join('&')
             };
         }
-        return fetch.call(this, BASE_URL + '?path=' + path, Object.assign({}, options, ext))
+        return fetch.call(this, BASE_URL + '?path=' + path, _.assign({}, options, ext))
             .then(res => {
                 return Promise.resolve(res.json());
             })

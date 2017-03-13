@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const initialState = {
     userInfo: {},
     ingredientsCategoryItems: [],
@@ -7,15 +9,15 @@ const initialState = {
 export default function update(state = initialState, action) {
     switch (action.type) {
         case 'setUserInfo':
-            return Object.assign({}, state, {
+            return _.assign({}, state, {
                 userInfo: action.payload
             });
         case 'setIngredientsCategoryItems':
-            return Object.assign({}, state, {
+            return _.assign({}, state, {
                 ingredientsCategoryItems: action.payload
             });
         case 'setIngredientsDetail':
-            return Object.assign({}, state, {
+            return _.assign({}, state, {
                 ingredientsDetail: action.payload
             });
         default:

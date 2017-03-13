@@ -32,19 +32,19 @@ const config = {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: [routeComponentRegex, nodeModulesPath],
+                exclude: [nodeModulesPath],
                 loader: 'babel-loader',
             },
-            {
-                test: routeComponentRegex,
-                loaders: ['bundle-loader?lazy', 'babel-loader'],
-            },
             // {
-            //     // React-hot loader and
-            //     test: /\.js$/, // All .js files
-            //     loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
-            //     exclude: [nodeModulesPath]
+            //     test: routeComponentRegex,
+            //     loaders: ['bundle-loader?lazy', 'babel-loader'],
             // },
+            {
+                // React-hot loader and
+                test: /\.js$/, // All .js files
+                loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
+                exclude: [nodeModulesPath]
+            },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader?modules!postcss-loader'
